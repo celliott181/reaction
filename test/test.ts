@@ -19,6 +19,15 @@ import { delay } from '../src/operators/delay';
 let successes = 0;
 let total = 0;
 
+process.on('exit', (code) => {
+  console.log();
+  if (successes < total) {
+    console.error(`${total - successes > 0 ? '💔' : '✅'} ${successes} out of ${total} tests succeeded.`)
+  }
+
+  console.log(`Process exited with code: ${code}`);
+});
+
 export const test = async (msg: string, should: () => Promise<void> | void = async () => {}) => {
   total++;
 
@@ -31,8 +40,9 @@ export const test = async (msg: string, should: () => Promise<void> | void = asy
     successes += 1;
     console.log(`${successes}/${total} ✅ ${msg}`);
   } catch (e) {
-    console.error(`💔 ${msg}`);
+    console.error(`${successes}/${total} 💔 ${msg}`);
     console.error(`\t ${e}`);
+    process.exitCode = 1;
   }
 }
 
@@ -72,7 +82,7 @@ test('The Observable class should create an observable that immediately complete
     observable.subscribe({
       next: () => reject(),
       error: (err: Error) => reject(err),
-      complete: () => resolve()
+      complete: () => reject()
     })
   });
 });
@@ -183,10 +193,10 @@ test('fromEvent() should return an observable that emits events from the given s
     };
 
     const testEvent = new class TestEvent implements Event {
-      NONE = 0;
-      CAPTURING_PHASE = 1;
-      AT_TARGET = 2;
-      BUBBLING_PHASE = 3;
+      readonly NONE: 0 = 0;
+      readonly CAPTURING_PHASE: 1 = 1;
+      readonly AT_TARGET: 2 = 2;
+      readonly BUBBLING_PHASE: 3 = 3;
       cancelBubble = false;
       _preventDefault = false;
       _phase = 0;
@@ -450,4 +460,3 @@ test('delay() should delay the emission by the correct amount of time.', () => {
     };
   });
 });
-
