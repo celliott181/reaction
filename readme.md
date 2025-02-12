@@ -4,11 +4,11 @@ A reactive programming library.
 ## Install
 ### NPM
 
-`npm install --save @celliott181/reactionjs`
+`npm install --save @celliott181/reaction`
 
 ### CDN
 
-`<script type="text/javascript" src="https://unpkg.com/@celliott181/reaction@1.0.1/dist/reaction.js"></script>`
+`<script type="text/javascript" src="https://unpkg.com/@celliott181/reaction@1.0.4/dist/reaction.js"></script>`
 
 ## NodeJS
 ```
