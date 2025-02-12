@@ -82,7 +82,7 @@ test('The Observable class should create an observable that immediately complete
     observable.subscribe({
       next: () => reject(),
       error: (err: Error) => reject(err),
-      complete: () => reject()
+      complete: () => resolve()
     })
   });
 });
