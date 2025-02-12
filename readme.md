@@ -8,7 +8,7 @@ A reactive programming library.
 
 ### CDN
 
-`<script type="text/javascript" src="https://unpkg.com/@celliott181/reaction@1.0.5/dist/reaction.js"></script>`
+`<script type="text/javascript" src="https://unpkg.com/@celliott181/reaction@1.0.6/dist/reaction.js"></script>`
 
 ## NodeJS
 ```
@@ -23,7 +23,7 @@ of('Hello world').subscribe({
 ```
 <html>
 <head>
-  <script type="text/javascript" src="https://unpkg.com/@celliott181/reaction@1.0.5/dist/reaction.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/@celliott181/reaction@1.0.6/dist/reaction.js"></script>
   
   <script type="text/javascript">
     const { Observable, pipe, map } = reaction;
