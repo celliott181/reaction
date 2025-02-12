@@ -1,5 +1,5 @@
 # Reaction
-A reactive programming library. Remember to 
+A reactive programming library.
 
 ## Install
 ### NPM
