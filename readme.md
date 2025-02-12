@@ -8,11 +8,11 @@ A reactive programming library.
 
 ### CDN
 
-`<script type="text/javascript" src="https://unpkg.com/@celliott181/reaction@1.0.4/dist/reaction.js"></script>`
+`<script type="text/javascript" src="https://unpkg.com/@celliott181/reaction@1.0.5/dist/reaction.js"></script>`
 
 ## NodeJS
 ```
-const { of } = require('@gelliott181/reactionjs');
+const { of } = require('@celliott181/reactionjs');
 
 of('Hello world').subscribe({ 
   next: str => console.log(str) 
@@ -23,7 +23,7 @@ of('Hello world').subscribe({
 ```
 <html>
 <head>
-  <script type="text/javascript" src="https://unpkg.com/@gelliott181/reactionjs@1.0.0/dist/reaction.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/@celliott181/reactionjs@1.0.5/dist/reaction.js"></script>
   
   <script type="text/javascript">
     const { Observable, pipe, map } = reaction;
